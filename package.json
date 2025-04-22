@@ -1,33 +1,33 @@
 {
-  "name": "hypercore-detector",
-  "version": "1.0.0",
-  "description": "Detect the type of a Hypercore",
+  "name": "spacecore-detector",
+  "version": "0.0.1",
+  "description": "Detect the type of a Spacecore",
   "main": "index.js",
   "scripts": {
     "test": "standard && brittle test.js --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/holepunchto/hypercore-detector.git"
+    "url": "git+https://github.com/samooth/spacecore-detector.git"
   },
   "keywords": [
-    "Hypercore"
+    "Spacecore"
   ],
   "author": "Holepunch",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/holepunchto/hypercore-detector/issues"
+    "url": "https://github.com/samooth/spacecore-detector/issues"
   },
-  "homepage": "https://github.com/holepunchto/hypercore-detector#readme",
+  "homepage": "https://github.com/samooth/spacecore-detector#readme",
   "devDependencies": {
     "brittle": "^3.3.1",
-    "corestore": "^6.8.2",
-    "hypercore": "^10.15.1",
-    "hyperdrive": "^11.2.0",
+    "spacecorestore": "latest",
+    "bitspacecore": "latest",
+    "spacedrive": "latest",
     "random-access-memory": "^6.2.0",
     "standard": "^17.1.0"
   },
   "dependencies": {
-    "hyperbee": "^2.13.0"
+    "spacebee": "latest"
   }
 }
