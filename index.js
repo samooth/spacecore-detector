@@ -1,24 +1,24 @@
-const Hyperbee = require('hyperbee')
+const Spacebee = require('spacebee')
 
-const CORE_TYPE = 'core'
+const CORE_TYPE = 'spacecore'
 const BEE_TYPE = 'bee'
 const DRIVE_TYPE = 'drive'
 const UNKNOWN_TYPE = null
 
-async function detect (hypercore, { wait = false } = {}) {
+async function detect (spacecore, { wait = false } = {}) {
   let isBee
   try {
-    isBee = await Hyperbee.isHyperbee(hypercore, { wait })
+    isBee = await Spacebee.isSpacebee(spacecore, { wait })
   } catch (e) { // Could not load first block (~only when wait=false set)
     return UNKNOWN_TYPE
   }
 
   if (!isBee) return CORE_TYPE
 
-  const bee = new Hyperbee(hypercore.session())
+  const bee = new Spacebee(spacecore.session())
 
   try {
-    const isDrive = await isHyperdriveDb(bee)
+    const isDrive = await isSpacedriveDb(bee)
     if (isDrive) {
       return DRIVE_TYPE
     } else {
@@ -29,7 +29,7 @@ async function detect (hypercore, { wait = false } = {}) {
   }
 }
 
-async function isHyperdriveDb (bee) {
+async function isSpacedriveDb (bee) {
   const header = await bee.getHeader()
   const contentFeed = header.metadata?.contentFeed
 
